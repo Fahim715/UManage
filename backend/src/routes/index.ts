@@ -4,6 +4,9 @@ import { authRouter } from "../modules/auth/auth.routes";
 import { usersRouter } from "../modules/users/users.routes";
 import { departmentsRouter } from "../modules/departments/departments.routes";
 
+import { tasksRouter } from "../modules/tasks/task.routes";
+import { leaveRequestsRouter } from "../modules/leave-requests/leave-request.routes";
+
 export const router = Router();
 
 /**
@@ -22,8 +25,7 @@ router.get("/health", async (_req, res) => {
 router.use("/auth", authRouter);
 router.use("/users", usersRouter);
 router.use("/departments", departmentsRouter);
-
-// Feature module routers will be mounted here in later steps:
-// router.use("/tasks", tasksRouter);
+router.use("/tasks", tasksRouter);
+router.use("/leave-requests", leaveRequestsRouter);
 // router.use("/tasks", tasksRouter);
 // router.use("/leave-requests", leaveRequestsRouter);
